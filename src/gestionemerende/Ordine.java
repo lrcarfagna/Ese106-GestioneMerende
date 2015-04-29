@@ -42,5 +42,13 @@ public class Ordine {
 			throw new IllegalArgumentException("classe=null");
 	}
 	
+	public void addArticolo(Articolo a){
+		if(a!=null){
+			this.getArticoli().addElement(a);
+		}
+		else
+			throw new IllegalArgumentException("Articolo=null");
+	}
+	
 
 }
