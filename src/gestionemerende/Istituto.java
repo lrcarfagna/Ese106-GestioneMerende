@@ -29,4 +29,12 @@ public class Istituto {
 	public Vector<Classe> getClassi() {
 		return classi;
 	}
+	
+	public void addClasse(Classe a){
+		if(a!=null){
+			classi.addElement(a);
+		}
+		else
+			throw new IllegalArgumentException("Classe=null");
+	}
 }

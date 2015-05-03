@@ -50,5 +50,21 @@ public class Ordine {
 			throw new IllegalArgumentException("Articolo=null");
 	}
 	
+	public int getNumeroArticoli(){
+		return articoli.size();
+	}
+	
+	public double getCostoTotale(){
+		double costoTotale=0;
+		for(int i=0;i<articoli.size();i++){
+			costoTotale+=articoli.elementAt(i).getCostoUnitario();
+		}
+		return costoTotale;
+	}
+	
+	public Classe getClasse(){
+		return this.classe;
+	}
+	
 
 }

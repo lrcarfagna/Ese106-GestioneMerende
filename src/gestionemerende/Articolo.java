@@ -8,8 +8,8 @@ public class Articolo {
 	private String descrizione;
 	
 	
-	public Articolo(String ID,double calorie,
-			double costoUnitario,String descrizione){
+	public Articolo(String ID,String descrizione,
+			double costoUnitario,double calorie){
 		
 		if(ID!=null){
 			if(ID.length()>0){

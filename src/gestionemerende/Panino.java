@@ -1,22 +1,33 @@
 package gestionemerende;
 
-public class Panino {
+public class Panino extends Articolo{
 	
 	private boolean vegetariano;
 	private boolean carneSuina;
 	
-	public Panino(String ID,double calorie,
-			double costoUnitario,String descrizione,
-			boolean vegetariano,boolean carneSuine){
+	public Panino(String ID,String descrizione,double calorie,
+			double costoUnitario,
+			boolean vegetariano,boolean carneSuina){
+		
+		super(ID,descrizione,costoUnitario,calorie);
 		
 		if(vegetariano && carneSuina){
 			throw new IllegalArgumentException("panino sia vegetariano che con carne suina");
 		}
-		
-		super(ID,calorie,costoUnitario,descrizione);
-		
-		
-		
-	}
+		else{
+			this.vegetariano=vegetariano;
+			this.carneSuina=carneSuina;
+			
+		}
 
+	}
+		
+
+		public boolean isVegetariano() {
+			return vegetariano;
+		}
+
+		public boolean isCarneSuina() {
+			return carneSuina;
+		}
 }

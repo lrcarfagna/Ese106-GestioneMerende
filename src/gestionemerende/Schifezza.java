@@ -2,10 +2,10 @@ package gestionemerende;
 
 public class Schifezza extends Articolo{
 	
-	public Schifezza(String ID,double calorie,
-			double costoUnitario,String descrizione,double quantita){
+	public Schifezza(String ID,String descrizione,
+			double costoUnitario,double calorie){
 		
-		super(ID,calorie,costoUnitario,descrizione);
+		super(ID,descrizione,costoUnitario,calorie);
 	}
 	
 }
