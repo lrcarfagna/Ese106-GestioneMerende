@@ -1,11 +1,14 @@
 package gestionemerende;
 
+import java.util.Vector;
+
 public class Articolo {
 	
 	private String ID;
 	private double calorie;
 	private double costoUnitario;
 	private String descrizione;
+	private Vector<ArticoloOrdine> articoliOrdine;
 	
 	
 	public Articolo(String ID,String descrizione,
@@ -51,14 +54,33 @@ public class Articolo {
 	public String getID() {
 		return ID;
 	}
+	
 	public double getCalorie() {
 		return calorie;
 	}
+	
 	public double getCostoUnitario() {
 		return costoUnitario;
 	}
+	
 	public String getDescrizione() {
 		return descrizione;
+	}
+	
+	public Vector<ArticoloOrdine> getArticoliOrdine(){
+		return this.articoliOrdine;
+	}
+	
+	public void addArticoloOrdine(ArticoloOrdine a){
+		if(a!=null){
+			this.articoliOrdine.addElement(a);
+		}
+		else
+			throw new IllegalArgumentException("Articolo=null");
+	}
+	
+	public int getQuantitaTotale(){
+		
 	}
 
 }
