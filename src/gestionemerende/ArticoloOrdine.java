@@ -4,6 +4,7 @@ public class ArticoloOrdine {
 	
 	private Articolo articolo;
 	private int quantita;
+	private Ordine ordine;
 	
 	
 	
@@ -35,7 +36,14 @@ public class ArticoloOrdine {
 		if(q>0){
 			this.quantita=q;
 		}
-
+	}
+	
+	public void setOrdine(Ordine o){
+		if(o!=null){
+			this.ordine=o;
+		}
+		else
+			throw new IllegalArgumentException("o=null");
 	}
 	
 }

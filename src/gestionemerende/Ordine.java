@@ -5,7 +5,7 @@ import java.util.Vector;
 public class Ordine {
 	
 	private String codice;
-	private Vector<Articolo> articoli;
+	private Vector<ArticoloOrdine> articoli;
 	private Classe classe;
 	
 	
@@ -20,7 +20,7 @@ public class Ordine {
 		else
 			throw new IllegalArgumentException("nome=null");
 			
-		articoli=new Vector<Articolo>();
+		articoli=new Vector<ArticoloOrdine>();
 		
 	}
 
@@ -30,7 +30,7 @@ public class Ordine {
 	}
 
 
-	public Vector<Articolo> getArticoli() {
+	public Vector<ArticoloOrdine> getArticoli() {
 		return articoli;
 	}
 	
@@ -42,9 +42,20 @@ public class Ordine {
 			throw new IllegalArgumentException("classe=null");
 	}
 	
-	public void addArticolo(Articolo a){
+	public void addArticolo(ArticoloOrdine a){
 		if(a!=null){
-			this.getArticoli().addElement(a);
+			for(ArticoloOrdine ao: this.articoli){
+				if(a==ao){
+					a.setQuantita(a.getQuantita()+ao.getQuantita());
+				}
+				else{
+					articoli.addElement(a);
+					a.setOrdine(this);
+				}
+					
+				
+			}
+			
 		}
 		else
 			throw new IllegalArgumentException("Articolo=null");
@@ -57,7 +68,7 @@ public class Ordine {
 	public double getCostoTotale(){
 		double costoTotale=0;
 		for(int i=0;i<articoli.size();i++){
-			costoTotale+=articoli.elementAt(i).getCostoUnitario();
+			costoTotale+=articoli.elementAt(i).getArticolo().getCostoUnitario();
 		}
 		return costoTotale;
 	}

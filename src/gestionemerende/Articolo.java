@@ -80,7 +80,11 @@ public class Articolo {
 	}
 	
 	public int getQuantitaTotale(){
-		
+		int quantita=0;
+		for(ArticoloOrdine ao: this.articoliOrdine){
+			quantita += ao.getQuantita();
+		}
+		return quantita;
 	}
 
 }
