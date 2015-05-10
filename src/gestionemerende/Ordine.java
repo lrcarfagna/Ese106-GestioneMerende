@@ -43,17 +43,20 @@ public class Ordine {
 	}
 	
 	public void addArticolo(ArticoloOrdine a){
+		boolean trovato=false;
+		
 		if(a!=null){
 			for(ArticoloOrdine ao: this.articoli){
 				if(a==ao){
 					a.setQuantita(a.getQuantita()+ao.getQuantita());
+					trovato=true;
 				}
-				else{
-					articoli.addElement(a);
-					a.setOrdine(this);
-				}
-					
-				
+				break;
+			}
+			
+			if(trovato==false){
+				articoli.addElement(a);
+				a.getArticolo().addArticoloOrdine(a);
 			}
 			
 		}

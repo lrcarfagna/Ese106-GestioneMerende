@@ -20,12 +20,9 @@ public class ArticoloOrdine {
 		throw new IllegalArgumentException("la quantita deve essere maggiore di 0");
 	}
 
-
-
 	public Articolo getArticolo() {
 		return articolo;
 	}
-
 
 
 	public int getQuantita() {
@@ -33,18 +30,15 @@ public class ArticoloOrdine {
 	}
 	
 	public void setQuantita(int q){
-		if(q>0){
+		if(q>=0){
 			this.quantita=q;
 		}
 	}
 	
-	public void setOrdine(Ordine o){
-		if(o!=null){
-			this.ordine=o;
-		}
-		else
-			throw new IllegalArgumentException("o=null");
+	public Ordine getOrdine(){
+		return ordine;
 	}
+	
 	
 }
 	
